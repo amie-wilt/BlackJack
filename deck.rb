@@ -22,12 +22,9 @@ class Deck < Card
   end
 
   def draw
-    drawn_card = @cards.shift
-    puts drawn_card
+    @cards.shift
   end
 
 end
 
 deck = Deck.new
-puts deck.shuffle
-puts deck.draw.to_s
