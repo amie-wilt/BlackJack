@@ -23,11 +23,12 @@ deck.shuffle
 dealer_hand = []
 2.times do 
   dealer_hand << deck.draw
+   puts dealer_hand
 end
 
 puts "The cards were dealt. One of the dealer's cards is a #{dealer_hand[0]}." 
 
-dealer_hand.inject(0) { |sum, card| sum += card.value }
+dealer_hand_sum = dealer_hand.inject(0) { |sum, card| sum += card.value }
 
 
 player_hand = []
@@ -35,13 +36,15 @@ player_hand = []
   player_hand << deck.draw
 end
 
+player_hand_sum = player_hand.inject(0) { |sum, card| sum += card.value}
+
 # AUTOMAGIC WIN
 
-if dealer_hand == 21
+if dealer_hand_sum == 21
   puts "Dealer got 21, you lost!"
 end
 
-if player_hand == 21
+if player_hand_sum == 21
   puts "You won!"
 end
 
@@ -53,29 +56,17 @@ next_move = gets.chomp.downcase
 
 if next_move == "hit"
   player_hand << deck.draw
-else
-  player_total == player_hand
 end
 
-
-
-
-
-
-# CHECK TO SEE IF DEALER TOTAL IS 16, STAY OR HIT ACCORDINGLY
-
-# if dealer_hand < 16 && dealer_hand 
-#   dealer_hand << deck.draw
-# end
-
-
-# ASK PLAYER IF THEY WANT TO STAY OR HIT, WRITE IF/ELSE ACCORDINGLY
-
-# STOP LOOP WHEN BOTH PLAYERS DECIDE TO STAY
+if dealer_hand_sum < 16
+  dealer_hand << deck.draw
+  puts dealer_hand
+end
 
 # WHO WINS?
 
-
+player_total = player_hand_sum
+dealer_total = dealer_hand_sum
 if player_total > 21
     puts "You Lost :("
 elsif dealer_total > player_total && dealer_total <= 21
