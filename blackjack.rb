@@ -23,14 +23,14 @@ deck.shuffle
 dealer_hand = []
 2.times do 
   dealer_hand << deck.draw
-  
+  puts dealer_hand
   puts dealer_hand.inject(0) { |sum, card| sum += card.value }
 end
 
 player_hand = []
 2.times do
   player_hand << deck.draw
-  
+  puts player_hand
   puts player_hand.inject(0) { |sum, card| sum += card.value }
 end
 
