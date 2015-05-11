@@ -23,7 +23,6 @@ deck.shuffle
 dealer_hand = []
 2.times do 
   dealer_hand << deck.draw
-   puts dealer_hand
 end
 
 puts "The cards were dealt. One of the dealer's cards is a #{dealer_hand[0]}." 
@@ -60,7 +59,6 @@ end
 
 if dealer_hand_sum < 16
   dealer_hand << deck.draw
-  puts dealer_hand
 end
 
 # WHO WINS?
@@ -76,5 +74,10 @@ elsif dealer_total == player_total
 else
     puts "You Won!"
 end
+
+puts "The dealer's hand was: "
+puts dealer_hand
+puts "Your hand was: "
+puts player_hand
 
 deck.shuffle
