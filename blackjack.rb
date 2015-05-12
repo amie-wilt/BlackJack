@@ -10,6 +10,7 @@ if begin_play == "yes"
     puts "Let's begin!"
 elsif begin_play == "no"
     puts "Maybe next time."
+    abort
 else 
     puts "Please reply with Yes or No."
 end    
