@@ -13,7 +13,7 @@ class Card
   end
 
   def to_s
-    "#{@value}-#{suit}"
+    "#{@value} of #{suit}"
   end
 end
 
